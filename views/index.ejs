@@ -2,6 +2,7 @@
 <style>
     .fs{
         font-size: 0.9rem;
+        font-family: 'Montserrat', sans-serif;
     }
 </style>
 
@@ -66,7 +67,7 @@
                     <% duyurular.forEach(e=> { %>
                         <div class="col-lg-12">
                              <h4 style="color: brown;"> <%=e.baslik %> </h4> 
-                             <h6 class="fs" style="float: right; position: absolute; top: 0; right: 20px;">Eklenme Tarihi: <%= e.date.toLocaleDateString('tr-TU',options) %></h6>
+                             <h6 class="fs" style="float: right; position: absolute; top: 0; right: 60px;">Eklenme Tarihi: <%= e.date.toLocaleDateString('tr-TU',options) %></h6>
                              <h6 class="fs" style="float: right; position: absolute; top: 0; right: 0;"><%=  e.date.toLocaleTimeString('tr-TU',[], {hour: '2-digit', minute:'2-digit'})%> </h6>
                         </div>
                         <div class="col-lg-9" >
