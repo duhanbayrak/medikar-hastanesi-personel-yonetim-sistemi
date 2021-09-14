@@ -17,7 +17,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -74,8 +76,9 @@
         color: whitesmoke;
         position: absolute;
         right: 10px;
-        
+
     }
+
     .container {
         width: 100%;
     }
@@ -83,8 +86,6 @@
     .deneme {
         background: red;
     }
-
-    
 </style>
 
 <body>
@@ -95,7 +96,7 @@
             <div class="basliklar">
                 <h1 id="baslik">Özel Medikar Hastanesi</h1>
                 <h2 id="bas">Personel</h2>
-                
+
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -121,22 +122,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/dokuman">Dökümanlar</a>
                     </li>
-                    
-                      
-                   
+
+
+
                     <% if(!currentUser){ %>
 
                         <a href="/login" class="btn btn-secondary" id="giris-btn">Giriş</a>
 
-                    <% }else{ %>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/admin">Admin</a>
-                        </li>
+                        <% }else{ %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin">Admin</a>
+                            </li>
 
-                        <a href="/logout" class="btn btn-secondary" id="cikis-btn">Çıkış</a>
-                    <% } %>
-                    
-                   
+                            <a href="/logout" class="btn btn-secondary" id="cikis-btn">Çıkış</a>
+                            <% } %>
+
+
 
                 </ul>
 
@@ -144,4 +145,3 @@
 
             </div>
         </nav>
-        

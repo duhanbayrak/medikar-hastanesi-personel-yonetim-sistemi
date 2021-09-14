@@ -1,33 +1,47 @@
 <%- include('partials/header') %>
 
-<br>
-<table class="table">
-    <thead class="table-dark">
-        <th class="col-lg-1">İsim</th>
-        <th class="col-lg-1">Soyisim</th>
-        <th class="col-lg-1">Cinsiyet</th>
-        <th class="col-lg-2">Doğum Günü</th>
-        <th class="col-lg-2">Departman</th>
-        <th class="col-lg-3">Ünvan</th>
-        <th class="col-lg-4">Telefon</th>
-       </thead>
-    <tbody id="tbody">
-       
+    <br>
+    <table class="table">
+        <thead class="table-dark">
+            <th class="col-lg-1">İsim</th>
+            <th class="col-lg-1">Soyisim</th>
+            <th class="col-lg-1">Cinsiyet</th>
+            <th class="col-lg-2">Doğum Günü</th>
+            <th class="col-lg-2">Departman</th>
+            <th class="col-lg-3">Ünvan</th>
+            <th class="col-lg-4">Telefon</th>
+        </thead>
+        <tbody id="tbody">
+
             <tr>
-                <td><%=personel.name %></a></td>
-                <td><%= personel.lastName %> </td>
-                <td><%= personel.gender %> </td>
-                <td><%= personel.birthDay %> </td>
-                <td><%= personel.department %> </td>
-                <td><%= personel.title %> </td>
-                <td><%= personel.phone %> </td>
+                <td>
+                    <%=personel.name %></a>
+                </td>
+                <td>
+                    <%= personel.lastName %>
+                </td>
+                <td>
+                    <%= personel.gender %>
+                </td>
+                <td>
+                    <%= personel.birthDay %>
+                </td>
+                <td>
+                    <%= personel.department %>
+                </td>
+                <td>
+                    <%= personel.title %>
+                </td>
+                <td>
+                    <%= personel.phone %>
+                </td>
                 <td>
                     <form method="POST" action="/personel/<%- personel._id %> ">
-                    
+
                         <button class="btn btn-danger" type="submit">DELETE</button>
-                      </form>
+                    </form>
                 </td>
             </tr>
 
-    </tbody>
-</table>
+        </tbody>
+    </table>

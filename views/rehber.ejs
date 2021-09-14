@@ -1,51 +1,55 @@
 <%- include('partials/header') %>
     <style>
-        .search-box{
-        
-        width: 340px; 
-        height: 50px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        border: 1px solid #2C394B;
-    }
-    #name{
-        margin-left: 10px;
-        background: transparent; 
-        box-shadow: none; 
-        border: none;
-        outline: none;
-        font-size: 1.5rem;
-        font-family: 'Montserrat', sans-serif;
-    }
-    #search-btn{
-        font-size: 1.5rem;
-        cursor: pointer;
-        outline: none;
-        color: #548CA8;
-    }
-    #search-btn:hover{
-        color: #2C394B;
-    }
+        .search-box {
+
+            width: 340px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #2C394B;
+        }
+
+        #name {
+            margin-left: 10px;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            outline: none;
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #search-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            outline: none;
+            color: #548CA8;
+        }
+
+        #search-btn:hover {
+            color: #2C394B;
+        }
     </style>
     <div class="card">
         <div class="card-header">
             <h2>Telefon Rehberi</h2>
         </div>
         <div class="card-body">
-           <form action="/rehber" method="get">
+            <form action="/rehber" method="get">
                 <div class="form-group">
                     <div class="search-box">
                         <input id="name" type="text" placeholder="Ara" name="name">
-                        <button type="submit" class="search-btn" style="background: transparent; border: none;" id="search-btn"><i class="fas fa-search"></i></button>
+                        <button type="submit" class="search-btn" style="background: transparent; border: none;"
+                            id="search-btn"><i class="fas fa-search"></i></button>
                     </div>
-                    
+
                 </div>
             </form>
         </div>
     </div>
     <div class="telefonListe">
-        
+
         <table class="table">
             <thead class="table-dark">
                 <th class="col-lg-2">İsim</th>
@@ -53,16 +57,26 @@
                 <th class="col-lg-2">Departman</th>
                 <th class="col-lg-4">Ünvan</th>
                 <th class="col-lg-2">Telefon</th>
-               </thead>
+            </thead>
             <tbody id="tbody">
                 <% personel.forEach(e=> { %>
                     <tr>
-                        <td><%= e.name %> </td>
-                        <td><%= e.lastName %> </td>
-                        <td><%= e.department %> </td>
-                        <td><%= e.title %> </td>
-                        <td><%= e.phone %> </td>
-                       
+                        <td>
+                            <%= e.name %>
+                        </td>
+                        <td>
+                            <%= e.lastName %>
+                        </td>
+                        <td>
+                            <%= e.department %>
+                        </td>
+                        <td>
+                            <%= e.title %>
+                        </td>
+                        <td>
+                            <%= e.phone %>
+                        </td>
+
                     </tr>
 
                     <% }) %>
@@ -70,5 +84,3 @@
         </table>
 
     </div>
-   
-  

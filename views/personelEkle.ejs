@@ -1,81 +1,86 @@
 <%- include('partials/header') %>
 
-<br><br>
-<div class="container col-lg-6">
-    <form action="/personelEkle" method="post">
-        <div class="form-group">
-            <label for="name">İsim</label>
-            <input type="text" class="form-control" id="name" placeholder="Büyük Harflerle" name="name"  required>
-        </div>
-        <div class="form-group">
-            <label for="lastName">Soyisim</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Büyük Harflerle" name="lastName" required>
-        </div>
-       
-        <div class="form-group">
-            <label for="gender">Cinsiyet</label>
-            <select class="form-control" id="gender" placeholder="Cinsiyet" name="gender" required>
-                <option value="E">Erkek</option>
-                <option value="K">Kadın</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="birthDay">Doğum Günü</label>
-            <input type="date" class="form-control" name="birthDay" required>
-        </div>
-        <div class="form-group">
-           
-            <label for="department">Departman</label>
-            <select class="form-control" name="department" id="department">
-                <option value="Başhekimlik">Başhekimlik</option>
-                <option value="Bilgi İşlem">Bilgi İşlem</option>
-                <option value="Biyomedikal">Biyomedikal</option>
-                <option value="Destek Hizmetleri">Destek Hizmetleri</option>
-                <option value="Eczane">Eczane</option>
-                <option value="Hasta Hizmetleri">Hasta Hizmetleri</option>
-                <option value="Hemşirelik Hizmetleri">Hemşirelik Hizmetleri</option>
-                <option value="İnsan Kaynakları">İnsan Kaynakları</option>
-                <option value="Kalite">Kalite</option>
-                <option value="Kurumsal Tanıtım Ve Pazarlama">Kurumsal Tanıtım Ve Pazarlama</option>
-                <option value="Mali İşler">Mali İşler</option>
-                <option value="Medikal Muhasebe">Medikal Muhasebe</option>
-                <option value="Satın Alma Ve Lojistik">Satın Alma Ve Lojistik</option>
-                <option value="Otelcilik ve Temizlik Hizmetleri">Otelcilik ve Temizlik Hizmetleri</option>
-                <option value="İdari İşler">İdari İşler</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="title">Ünvan</label>
-            <input type="text" class="form-control" id="title" placeholder="Ünvan" name="title" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Telefon</label>
-            <input type="text" class="form-control" id="phone" placeholder="Telefon" name="phone"  value="" required>
-        </div> 
-        <div class="form-group">
-            <button type="submit" class="btn btn-success btn-block">Ekle</button>
-        </div>
-    </form> 
-    
-<footer class="border-top">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+    <br><br>
+    <div class="container col-lg-6">
+        <form action="/personelEkle" method="post">
+            <div class="form-group">
+                <label for="name">İsim</label>
+                <input type="text" class="form-control" id="name" placeholder="Büyük Harflerle" name="name" required>
             </div>
-        </div>
-    </div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-<!-- Core theme JS-->
-<script>
+            <div class="form-group">
+                <label for="lastName">Soyisim</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Büyük Harflerle" name="lastName"
+                    required>
+            </div>
 
-    $('#phone').inputmask("(599) 999-99-99");
-    </script>
+            <div class="form-group">
+                <label for="gender">Cinsiyet</label>
+                <select class="form-control" id="gender" placeholder="Cinsiyet" name="gender" required>
+                    <option value="E">Erkek</option>
+                    <option value="K">Kadın</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="birthDay">Doğum Günü</label>
+                <input type="date" class="form-control" name="birthDay" required>
+            </div>
+            <div class="form-group">
+
+                <label for="department">Departman</label>
+                <select class="form-control" name="department" id="department">
+                    <option value="Başhekimlik">Başhekimlik</option>
+                    <option value="Bilgi İşlem">Bilgi İşlem</option>
+                    <option value="Biyomedikal">Biyomedikal</option>
+                    <option value="Destek Hizmetleri">Destek Hizmetleri</option>
+                    <option value="Eczane">Eczane</option>
+                    <option value="Hasta Hizmetleri">Hasta Hizmetleri</option>
+                    <option value="Hemşirelik Hizmetleri">Hemşirelik Hizmetleri</option>
+                    <option value="İnsan Kaynakları">İnsan Kaynakları</option>
+                    <option value="Kalite">Kalite</option>
+                    <option value="Kurumsal Tanıtım Ve Pazarlama">Kurumsal Tanıtım Ve Pazarlama</option>
+                    <option value="Mali İşler">Mali İşler</option>
+                    <option value="Medikal Muhasebe">Medikal Muhasebe</option>
+                    <option value="Satın Alma Ve Lojistik">Satın Alma Ve Lojistik</option>
+                    <option value="Otelcilik ve Temizlik Hizmetleri">Otelcilik ve Temizlik Hizmetleri</option>
+                    <option value="İdari İşler">İdari İşler</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">Ünvan</label>
+                <input type="text" class="form-control" id="title" placeholder="Ünvan" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="text" class="form-control" id="phone" placeholder="Telefon" name="phone" value="" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Ekle</button>
+            </div>
+        </form>
+
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+            integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+            crossorigin="anonymous"></script>
+        <!-- Core theme JS-->
+        <script>
+
+            $('#phone').inputmask("(599) 999-99-99");
+        </script>
 
 
 
@@ -83,5 +88,6 @@
 
 
 
-</body>
-</html>
+        </body>
+
+        </html>

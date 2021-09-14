@@ -26,7 +26,7 @@ mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true, ssl: 
         console.log("hata")
         console.log(err);
     });
-    
+
 const conn = mongoose.connection;
 
 let gfs;
@@ -87,25 +87,25 @@ app.get("/dokumanEkle", (req, res) => {
 })
 
 app.post("/upload", upload.single('document'), (req, res) => {
-   
+
     res.redirect("/dokumanEkle");
 });
 
 app.get("/dokuman", (req, res) => {
-    gfs.files.find().sort({uploadDate:-1}).toArray((err, files) => {
+    gfs.files.find().sort({ uploadDate: -1 }).toArray((err, files) => {
         if (!files || files.length === 0) {
-            res.render("dokuman",{files: false});
-        }else{
+            res.render("dokuman", { files: false });
+        } else {
             files.map(file => {
                 if (file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
                     file.isImage = true;
-                }else{
+                } else {
                     file.isImage = false;
                 }
             });
-            res.render('dokuman',{files:files});
+            res.render('dokuman', { files: files });
         }
-        
+
     });
 });
 app.get("/dokuman/:filename", (req, res) => {
@@ -137,7 +137,7 @@ app.get("/image/:filename", (req, res) => {
             const readStream = gfs.createReadStream(file.filename);
             readStream.pipe(res);
         }
-        else{
+        else {
             res.status(404).json({
                 err: "Resim Bulunamadı"
             })
@@ -146,13 +146,13 @@ app.get("/image/:filename", (req, res) => {
 });
 
 app.delete("/files/:id", (req, res) => {
-    gfs.remove({ _id: req.params.id, root:'uploads'}, (err, gridStore) => {
+    gfs.remove({ _id: req.params.id, root: 'uploads' }, (err, gridStore) => {
         if (err) {
             return res.status(404).json({
                 err: err
             });
         }
-       res.redirect("/dokuman")
+        res.redirect("/dokuman")
     });
 });
 

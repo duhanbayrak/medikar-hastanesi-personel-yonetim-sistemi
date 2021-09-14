@@ -2,13 +2,13 @@ const express = require('express'),
     router = express.Router(),
     Personel = require("../models/personelModel"),
     Duyuru = require("../models/duyuruModel");
-    
+
 
 //--------------------HOME--------------------
 router.get("/", (req, res) => {
-    Duyuru.find().sort({date:-1})
+    Duyuru.find().sort({ date: -1 })
         .then((result) => {
-            res.render("index", {duyuru: result})
+            res.render("index", { duyuru: result })
         }).catch((err) => {
             console.log(err)
         });
@@ -20,7 +20,7 @@ router.get("/rehber", (req, res) => {
 
     const name = req.query.name
 
-    Personel.find({name: {$regex: new RegExp("^"+name+".*","i")}}).sort({name:1})
+    Personel.find({ name: { $regex: new RegExp("^" + name + ".*", "i") } }).sort({ name: 1 })
         .then((result) => {
             res.render("rehber", { personel: result })
         }).catch((err) => {
@@ -29,7 +29,7 @@ router.get("/rehber", (req, res) => {
 });
 
 //--------------------PERSONEL EKLE--------------------
-router.get("/personelEkle",isLoggedIn, (req, res) => {
+router.get("/personelEkle", isLoggedIn, (req, res) => {
     res.render("personelEkle");
 });
 router.post("/personelEkle", (req, res) => {
@@ -48,11 +48,11 @@ router.post("/personelEkle", (req, res) => {
 });
 
 //--------------------PERSONEL LİSTELE--------------------
-router.get("/allPersonels",isLoggedIn, (req, res) => {
+router.get("/allPersonels", isLoggedIn, (req, res) => {
 
     const name = req.query.name;
-    
-    Personel.find({name: {$regex: new RegExp("^"+name+".*","i")}}).sort({name:1})
+
+    Personel.find().sort({ name: 1 })
         .then((result) => {
             res.render("allpersonels", { personel: result })
         }).catch((err) => {
@@ -60,29 +60,29 @@ router.get("/allPersonels",isLoggedIn, (req, res) => {
         });
 })
 //--------------------PERSONEL--------------------
-router.get("/personel/:id",isLoggedIn, (req, res) => {
+router.get("/personel/:id", isLoggedIn, (req, res) => {
     const id = req.params.id;
     Personel.findById(id)
-     .then((result) => {
-         res.render('personel',{personel: result})
-     }).catch((err) => {
-         console.log(err);
-     });
+        .then((result) => {
+            res.render('personel', { personel: result })
+        }).catch((err) => {
+            console.log(err);
+        });
 });
-router.post("/personel/:id", (req, res) =>{
+router.post("/personel/:id", (req, res) => {
     const id = req.params.id;
     console.log(id)
-    Personel.deleteOne({_id:id})
-     .then(() => {
-         res.redirect('/allPersonels')
-     }).catch((err) => {
-         console.log(err);
-     });
+    Personel.deleteOne({ _id: id })
+        .then(() => {
+            res.redirect('/allPersonels')
+        }).catch((err) => {
+            console.log(err);
+        });
 });
 
 //--------------------DUYURU EKLE--------------------
 
-router.get("/duyuruEkle",isLoggedIn, (req, res) => {
+router.get("/duyuruEkle", isLoggedIn, (req, res) => {
     res.render("duyuruEkle")
 })
 
@@ -96,41 +96,41 @@ router.post("/duyuruEkle", (req, res) => {
             res.redirect("/duyuruEkle")
         }).catch((err) => {
             console.log(err);
-        }); 
- })
- //--------------------TÜM DUYURULAR--------------------
+        });
+})
+//--------------------TÜM DUYURULAR--------------------
 
- router.get("/allDuyuru", (req, res) => {
-    Duyuru.find().sort({date:-1})
-    .then((result) => {
-        res.render("allDuyuru", {duyuru: result})
-    }).catch((err) => {
-        console.log(err)
-    });
-   
+router.get("/allDuyuru", (req, res) => {
+    Duyuru.find().sort({ date: -1 })
+        .then((result) => {
+            res.render("allDuyuru", { duyuru: result })
+        }).catch((err) => {
+            console.log(err)
+        });
+
 })
 //--------------------DUYURU--------------------
-router.get("/duyuru/:id",isLoggedIn, (req, res) =>{
+router.get("/duyuru/:id", isLoggedIn, (req, res) => {
     const id = req.params.id;
     Duyuru.findById(id)
-     .then((result) => {
-         res.render('duyuru',{duyuru: result})
-     }).catch((err) => {
-         console.log(err);
-     });
+        .then((result) => {
+            res.render('duyuru', { duyuru: result })
+        }).catch((err) => {
+            console.log(err);
+        });
 });
-router.post("/duyuru/:id", (req, res) =>{
+router.post("/duyuru/:id", (req, res) => {
     const id = req.params.id;
     console.log(id)
-    Duyuru.deleteOne({_id:id})
-     .then(() => {
-         res.redirect('/allDuyuru')
-     }).catch((err) => {
-         console.log(err);
-     });
+    Duyuru.deleteOne({ _id: id })
+        .then(() => {
+            res.redirect('/allDuyuru')
+        }).catch((err) => {
+            console.log(err);
+        });
 });
 
-function isLoggedIn(req,res,next) {
+function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }

@@ -1,33 +1,36 @@
 <%- include('./partials/header') %>
-<style>
-    .search-box{
-        
-        width: 340px; 
-        height: 50px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        border: 1px solid #2C394B;
-    }
-    #name{
-        margin-left: 10px;
-        background: transparent; 
-        box-shadow: none; 
-        border: none;
-        outline: none;
-        font-size: 1.5rem;
-        font-family: 'Montserrat', sans-serif;
-    }
-    #search-btn{
-        font-size: 1.5rem;
-        cursor: pointer;
-        outline: none;
-        color: #548CA8;
-    }
-    #search-btn:hover{
-        color: #2C394B;
-    }
-</style>
+    <style>
+        .search-box {
+
+            width: 340px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #2C394B;
+        }
+
+        #name {
+            margin-left: 10px;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            outline: none;
+            font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        #search-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            outline: none;
+            color: #548CA8;
+        }
+
+        #search-btn:hover {
+            color: #2C394B;
+        }
+    </style>
     <br>
     <div class="container" style="width: 100%;">
 
@@ -40,8 +43,9 @@
                     <div class="form-group">
                         <div class="search-box">
                             <input id="name" type="text" placeholder="Ara" name="name">
-                            <button type="submit" class="search-btn" style="background: transparent; border: none;" id="search-btn"><i class="fas fa-search"></i></button>
-                        </div>    
+                            <button type="submit" class="search-btn" style="background: transparent; border: none;"
+                                id="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -49,12 +53,12 @@
         <div class="telefonListe">
 
             <table class="table">
-                <thead class="table-dark" >
-                    <th >İsim</th>
-                    <th >Soyisim</th>
+                <thead class="table-dark">
+                    <th>İsim</th>
+                    <th>Soyisim</th>
                     <th class="col-lg-1">Cinsiyet</th>
                     <th class="col-lg-4">Doğum Günü</th>
-                    <th >Departman</th>
+                    <th>Departman</th>
                     <th>Ünvan</th>
                     <th class="col-lg-5">Telefon</th>
                     <th></th>
