@@ -7,13 +7,13 @@
 <br><br>
 <div class="container">
     <div class="row">
-        
+            <% const options = { weekday: 'long', year: 'numeric', month: 'numeric', day: 'numeric'}; %> 
             <% if(files){ %>
                 <% files.forEach(function(file) { %>
                     <div class="card mr-2 mt-2" style="width: 300px;">
                         <div class="card-header bg-dark text-info" >
                             <h6><%= file.filename %></h6>
-                            <h6 style="font-size: 0.9rem; font-family: 'Montserrat', sans-serif;" > <strong style="color: rgb(168, 161, 161);">Eklenme Tarihi: </strong> <strong style="color: rgb(209, 205, 205);"><%= file.uploadDate.toLocaleDateString() %> - <%=  file.uploadDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})%> </strong></h6>
+                            <h6 style="font-size: 0.9rem; font-family: 'Montserrat', sans-serif;" > <strong style="color: rgb(168, 161, 161);">Eklenme Tarihi: </strong> <strong style="color: rgb(209, 205, 205);"><%= file.uploadDate.toLocaleDateString('tr-TU',options) %> - <%=  file.uploadDate.toLocaleTimeString('tr-TU', {hour: '2-digit', minute:'2-digit'})%> </strong></h6>
                             
                             <% if(currentUser){ %>
                                 <form method="POST" action="/files/<%= file._id%>?_method=DELETE">
