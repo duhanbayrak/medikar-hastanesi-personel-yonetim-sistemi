@@ -31,7 +31,7 @@
             color: #2C394B;
         }
     </style>
-    <br>
+
     <div class="container" style="width: 100%;">
 
         <div class="card">
@@ -39,7 +39,7 @@
                 <h2>Personel Ara</h2>
             </div>
             <div class="card-body">
-                <form action="/allPersonels" method="GET">
+                <form action="/allPersonels" method="get">
                     <div class="form-group">
                         <div class="search-box">
                             <input id="name" type="text" placeholder="Ara" name="name">
@@ -67,7 +67,7 @@
                     <% personel.forEach(e=> { %>
                         <tr>
                             <td>
-                                <%=e.name %></a>
+                                <%=e.name %>
                             </td>
                             <td>
                                 <%= e.lastName %>
