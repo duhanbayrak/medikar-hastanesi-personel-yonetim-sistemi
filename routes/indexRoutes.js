@@ -52,7 +52,7 @@ router.get("/allPersonels", isLoggedIn, (req, res) => {
 
     const name = req.query.name;
 
-    Personel.find().sort({ name: 1 })
+    Personel.find({ name: { $regex: new RegExp("^" + name + ".*", "i") } }).sort({ name: 1 })
         .then((result) => {
             res.render("allpersonels", { personel: result })
         }).catch((err) => {
