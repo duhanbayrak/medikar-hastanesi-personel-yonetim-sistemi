@@ -74,7 +74,7 @@ router.post("/personel/:id", (req, res) => {
     console.log(id)
     Personel.deleteOne({ _id: id })
         .then(() => {
-            res.redirect('/allPersonels')
+            res.redirect('/personel_yonetim')
         }).catch((err) => {
             console.log(err);
         });
