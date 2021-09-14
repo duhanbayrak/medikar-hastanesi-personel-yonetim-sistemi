@@ -1,4 +1,10 @@
 <%- include('partials/header') %>
+<style>
+    .fs{
+        font-size: 0.9rem;
+    }
+</style>
+
     <div class="row ">
         <div class="slider col col-lg-12">
             <div id="carouselExampleIndicators" class="carousel slide mt-2 w-100" data-ride="carousel"
@@ -60,8 +66,8 @@
                     <% duyurular.forEach(e=> { %>
                         <div class="col-lg-12">
                              <h4 style="color: brown;"> <%=e.baslik %> </h4> 
-                             <h6 style="float: right; position: absolute; top: 0; right: 20px;">Eklenme Tarihi: <%= e.date.toLocaleDateString('tr-TU',options) %></h6>
-                             <h6 style="float: right; position: absolute; top: 0; right: 0;"><%=  e.date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})%> </h6>
+                             <h6 class="fs" style="float: right; position: absolute; top: 0; right: 20px;">Eklenme Tarihi: <%= e.date.toLocaleDateString('tr-TU',options) %></h6>
+                             <h6 class="fs" style="float: right; position: absolute; top: 0; right: 0;"><%=  e.date.toLocaleTimeString('tr-TU',[], {hour: '2-digit', minute:'2-digit'})%> </h6>
                         </div>
                         <div class="col-lg-9" >
                             <div>
