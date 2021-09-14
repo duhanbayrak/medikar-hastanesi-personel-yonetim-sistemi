@@ -55,12 +55,13 @@
                     <div class="nav-link" style=" position: absolute; right: 0; border-bottom: 1px solid #012443;" id="tarih"></div>
                 </div>
                 <hr>
-                <% const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' hour:'numeric'}; %> 
+                <% const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}; %> 
                 <% var duyurular=duyuru.slice(0,5) %>
                     <% duyurular.forEach(e=> { %>
                         <div class="col-lg-12">
                              <h4 style="color: brown;"> <%=e.baslik %> </h4> 
                              <h6 style="float: right; position: absolute; top: 0; right: 0;">Eklenme Tarihi: <%= e.date.toLocaleDateString('tr-TU',options) %></h6>
+                             <h6 style="float: right; position: absolute; ; right: 0;"><%=  e.date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})%> </h6>
                         </div>
                         <div class="col-lg-9" >
                             <div>

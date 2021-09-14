@@ -80,9 +80,6 @@ router.post("/personel/:id", (req, res) =>{
      });
 });
 
-//--------------------DOKÜMAN EKLE--------------------
-
-
 //--------------------DUYURU EKLE--------------------
 
 router.get("/duyuruEkle",isLoggedIn, (req, res) => {
