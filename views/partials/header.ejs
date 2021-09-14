@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/medikar_hastanesi_logo.png" />
+
+    <title>Medikar Hastanesi Personel</title>
+</head>
+<style>
+    body {
+        background: #EEEEEE;
+    }
+
+    .navbar {
+        font-size: 1.2rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .head {
+
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        font-family: 'Montserrat', sans-serif;
+        color: #334756;
+        border-bottom: 1px solid #334756;
+
+    }
+
+    .basliklar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #medikar_logo {
+        width: 220px;
+        height: 80px;
+    }
+
+    #baslik {
+        font-size: 3rem;
+    }
+
+    #giris-btn,
+    #cikis-btn {
+        width: 120px;
+        font-size: 1.4rem;
+        font-family: 'Montserrat', sans-serif;
+        background: transparent;
+        color: whitesmoke;
+        position: absolute;
+        right: 10px;
+        
+    }
+    .container {
+        width: 100%;
+    }
+
+    .deneme {
+        background: red;
+    }
+
+    
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="head">
+            <img id="medikar_logo" src="/images/medikar.png" alt="medikar_logo" srcset="">
+            <div class="basliklar">
+                <h1 id="baslik">Özel Medikar Hastanesi</h1>
+                <h2 id="bas">Personel</h2>
+                
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Personel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Anasayfa <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Duyurular</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/rehber">Telefon Rehberi</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Yemek Listesi</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dokuman">Dökümanlar</a>
+                    </li>
+                    
+                      
+                   
+                    <% if(!currentUser){ %>
+
+                        <a href="/login" class="btn btn-secondary" id="giris-btn">Giriş</a>
+
+                    <% }else{ %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin">Admin</a>
+                        </li>
+
+                        <a href="/logout" class="btn btn-secondary" id="cikis-btn">Çıkış</a>
+                    <% } %>
+                    
+                   
+
+                </ul>
+
+
+
+            </div>
+        </nav>
+        

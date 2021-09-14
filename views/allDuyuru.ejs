@@ -1,0 +1,27 @@
+<%- include('./partials/header') %>
+    <div class="duyuru col">
+        <div class="alert alert-success mt-2" role="alert">
+            <h1 style="text-align: center; color: darkgreen;">Duyurular</h1>
+            <hr>
+
+            <% duyuru.forEach(e=> { %>
+
+
+                <div class=" row col-lg-6 ">
+
+                    <h3>
+                        <%=e.baslik %>
+                    </h3>
+                    <h5>
+                        -<%= e.department %>
+                    </h5>
+                    <%- e.bilgi %>
+                </div>
+
+                <a class="btn btn-primary" href="/duyuru/<%= e._id %>">SEÇ</a>
+                <hr>
+
+                <% }) %>
+
+        </div>
+    </div>

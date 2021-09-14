@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+<style>
+    img{
+        width: 100%;
+    }
+</style>
+<br><br>
+<div class="container">
+    <div class="row">
+        
+            <% if(files){ %>
+                <% files.forEach(function(file) { %>
+                    <div class="card mr-2 mt-2" style="width: 300px;">
+                        <div class="card-header bg-dark text-info" >
+                            <h6><%= file.filename %></h6>
+                            <h6> <strong style="color: rgb(168, 161, 161);">Eklenme Tarihi: </strong> <strong style="color: rgb(209, 205, 205);"><%= file.uploadDate.toLocaleDateString() %></strong></h6>
+                            <% if(currentUser){ %>
+                                <form method="POST" action="/files/<%= file._id%>?_method=DELETE">
+                                    <button class="btn btn-danger mt-4 btn-sm mb-2">DELETE</button>
+                                </form>
+                            <%}%> 
+                            <% if (file.isImage) { %>
+                                <a href="/image/<%= file.filename%>" target="_blank"><img src="image/<%= file.filename %> " alt=""></a>
+                                <br> <br>
+                                <a href="/image/<%= file.filename%>" class="btn btn-success" download>İndir</a>
+                            <% } else if (file.contentType === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' || file.contentType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') { %>
+                                <a href="/dokuman/<%= file.filename%>" class="btn btn-success btn-sm" style="width: 70px;" download>İndir</a>
+                            <% }else{ %>
+                               <a style="width: 70px;" class="btn btn-info btn-sm" href="/dokuman/<%= file.filename %>" target="_blank">Aç</a>  
+                            <% } %>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                <% }) %> 
+            
+            <% }else{ %>
+                <p>Gösterilecek Dosya Yok!</p>
+            <% } %> 
+        
+    </div>
+</div>
+
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+<br><br>
+<div class="container">
+    <h2 style="text-align: center;">Yeni Duyuru Paylaş</h2>
+    <form action="/duyuruEkle" method="post">
+        <div class="form-group">
+            <label for="baslik">Duyuru Başlığı</label>
+            <input class="form-control" id="baslik" placeholder="Duyuru Başlığı" type="text" name="baslik" required>
+        </div>
+        <div class="form-group">
+            <label for="department">Departman</label>
+            <input class="form-control" id="department" placeholder="Departman" type="text" name="department" required>
+        </div>
+        
+        
+        <textarea name="bilgi" id="bilgi"></textarea> 
+        
+        <br><br>
+        <button type="submit" id="myButton" class="btn btn-outline-success">Paylaş</button>
+        <br><br>
+    </form>
+   
+</div>
+<footer class="border-top">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+<!-- Core theme JS-->
+
+<script>
+    CKEDITOR.replace('bilgi');
+</script>
+
+
+
+
+
+
+</body>
+</html>
