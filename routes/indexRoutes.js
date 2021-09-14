@@ -49,15 +49,15 @@ router.post("/personelEkle", (req, res) => {
 
 //--------------------PERSONEL LİSTELE--------------------
 router.get("/allPersonels", isLoggedIn, (req, res) => {
+    res.render("allpersonels")
+    // const name = req.query.name;
 
-    const name = req.query.name;
-
-    Personel.find({ name: { $regex: new RegExp("^" + name + ".*", "i") } }).sort({ name: 1 })
-        .then((result) => {
-            res.render("allpersonels", { personel: result })
-        }).catch((err) => {
-            console.log(err)
-        });
+    // Personel.find({ name: { $regex: new RegExp("^" + name + ".*", "i") } }).sort({ name: 1 })
+    //     .then((result) => {
+    //         res.render("allpersonels", { personel: result })
+    //     }).catch((err) => {
+    //         console.log(err)
+    //     });
 })
 //--------------------PERSONEL--------------------
 router.get("/personel/:id", isLoggedIn, (req, res) => {
