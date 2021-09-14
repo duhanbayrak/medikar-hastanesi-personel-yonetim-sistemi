@@ -49,7 +49,7 @@ router.post("/personelEkle", (req, res) => {
 
 //--------------------PERSONEL LİSTELE--------------------
 router.get("/personel_yonetim", isLoggedIn, (req, res) => {
-    res.render("allpersonels")
+    
     const name = req.query.name;
 
     Personel.find({ name: { $regex: new RegExp("^" + name + ".*", "i") } }).sort({ name: 1 })
