@@ -39,7 +39,7 @@
                 <h2>Personel Ara</h2>
             </div>
             <div class="card-body">
-                <form action="/allPersonels" method="get">
+                <form action="/allPersonels" method="GET">
                     <div class="form-group">
                         <div class="search-box">
                             <input id="name" type="text" placeholder="Ara" name="name">
@@ -64,7 +64,35 @@
                     <th></th>
                 </thead>
                 <tbody id="tbody">
-                   
+                    <% personel.forEach(e=> { %>
+                        <tr>
+                            <td>
+                                <%=e.name %></a>
+                            </td>
+                            <td>
+                                <%= e.lastName %>
+                            </td>
+                            <td>
+                                <%= e.gender %>
+                            </td>
+                            <td>
+                                <%= e.birthDay %>
+                            </td>
+                            <td>
+                                <%= e.department %>
+                            </td>
+                            <td>
+                                <%= e.title %>
+                            </td>
+                            <td>
+                                <%= e.phone %>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="/personel/<%= e._id %>">SEÇ</a>
+                            </td>
+                        </tr>
+
+                        <% }) %>
                 </tbody>
             </table>
 

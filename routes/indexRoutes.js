@@ -48,7 +48,7 @@ router.post("/personelEkle", (req, res) => {
 });
 
 //--------------------PERSONEL LİSTELE--------------------
-router.get("/allPersonels", isLoggedIn, (req, res) => {
+router.get("/allPersonels", (req, res) => {
 
     const name = req.query.name;
 
