@@ -48,13 +48,13 @@ router.post("/personelEkle", (req, res) => {
 });
 
 //--------------------PERSONEL LİSTELE--------------------
-router.get("/allPersonels", isLoggedIn, (req, res) => {
+router.get("/personel_yonetim", isLoggedIn, (req, res) => {
     res.render("allpersonels")
     const name = req.query.name;
 
     Personel.find({ name: { $regex: new RegExp("^" + name + ".*", "i") } }).sort({ name: 1 })
         .then((result) => {
-            res.render("allpersonels", { personel: result })
+            res.render("personel_yonetim", { personel: result })
         }).catch((err) => {
             console.log(err)
         });
